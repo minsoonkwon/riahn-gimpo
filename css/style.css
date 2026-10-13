@@ -425,3 +425,18 @@ html[lang="ja"] body,html[lang="zh-CN"] body{word-break:normal;overflow-wrap:any
 .price-table + .naver-discount{margin-top:14px}
 @media(max-width:480px){.naver-discount .btn{width:100%}}
 
+/* ===== 줄바꿈 다듬기 ===== */
+/* 제목·가운데 정렬 문구: 줄 길이를 고르게 */
+h1,h2,h3,.page-head p,.sec-head p,.hero-text p,.home-about p,.booking-banner p,.service-cta p,.recruit-visit,figcaption,summary,.card-body p,.designer-body .field,.recommend-box h3,
+li,td,.faq-a,.loc-info span,.loc-note,.map-addr p{text-wrap:balance}
+.designer-body p,.service-intro p{text-wrap:balance}
+/* 디자이너 이름·직급은 각각 한 덩어리로 */
+.designer-body h3 small{display:inline-block}
+/* 그 밖의 본문: 마지막 줄에 한 단어만 남지 않게 */
+p{text-wrap:pretty}
+/* 문장·항목 단위 묶음 (gen.py 의 ks/seg) */
+.ks{display:inline-block}
+/* 페이지 상단 문구 좌우 여백 (모바일에서 화면 끝에 붙지 않게) */
+.page-head{padding-left:20px;padding-right:20px}
+/* 일본어: 어절(문절) 단위 줄바꿈 — 縮毛矯正 같은 단어가 중간에 끊기지 않게 (지원 안 되는 브라우저는 기존 방식) */
+html[lang="ja"] body{word-break:auto-phrase}
